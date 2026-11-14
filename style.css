@@ -1,0 +1,290 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #10151d;
+    color: white;
+}
+
+header {
+    background: #182333;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #39e879;
+}
+
+.wallet {
+    background: #26374a;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+    background: #17212e;
+}
+
+button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #26374a;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #39b968;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+.page {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.days, .packs, .players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.day, .pack {
+    background: #1c2938;
+    border: 1px solid #34465b;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.day button, .pack button {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.day.completed {
+    border-color: #39e879;
+}
+
+.day.locked {
+    opacity: 0.5;
+}
+
+#quizArea {
+    background: #1c2938;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.team-info {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.team-info h3 {
+    color: #39e879;
+    font-size: 25px;
+}
+
+.pitch {
+    position: relative;
+    background: repeating-linear-gradient(
+        0deg,
+        #168b4d,
+        #168b4d 75px,
+        #117c42 75px,
+        #117c42 150px
+    );
+    border: 4px solid white;
+    border-radius: 12px;
+    max-width: 800px;
+    min-height: 520px;
+    margin: 25px auto;
+    padding: 25px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.pitch::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pitch-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.6);
+    top: 50%;
+    left: 0;
+}
+
+.pitch-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+.position-slot {
+    width: 90px;
+    min-height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    width: 82px;
+    min-height: 82px;
+    padding: 8px 3px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #f5d66c, #b98a26);
+    color: #17212e;
+    text-align: center;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-wrap: anywhere;
+}
+
+.player strong {
+    font-size: 21px;
+}
+
+.player small {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.player .player-name {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.empty-slot {
+    color: white;
+    background: rgba(0,0,0,0.25);
+    border: 1px dashed white;
+    border-radius: 10px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.player-card {
+    background: #1c2938;
+    border: 1px solid #34465b;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+}
+
+.player-card .player {
+    margin: auto;
+}
+
+.player-card p {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.player-card button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #39b968;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 10;
+}
+
+@media(max-width: 600px) {
+    .pitch {
+        min-height: 440px;
+        padding: 15px 3px;
+    }
+
+    .position-slot {
+        width: 65px;
+    }
+
+    .player {
+        width: 60px;
+        min-height: 70px;
+    }
+
+    .player strong {
+        font-size: 17px;
+    }
+
+    .player .player-name {
+        font-size: 8px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}

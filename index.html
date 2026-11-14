@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Quiz Mobile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>⚽ FC QUIZ</h1>
+    <div class="wallet">🪙 <span id="coins">0</span> FC</div>
+</header>
+
+<nav>
+    <button onclick="showPage('quiz')">Quizlar</button>
+    <button onclick="showPage('shop')">Shop</button>
+    <button onclick="showPage('team')">Jamoam</button>
+</nav>
+
+<main>
+    <section id="quiz" class="page">
+        <h2>Kunlik quizlar</h2>
+        <p>To‘g‘ri javob uchun 1 FC olasan!</p>
+        <div id="days" class="days"></div>
+        <div id="quizArea"></div>
+    </section>
+
+    <section id="shop" class="page hidden">
+        <h2>FC Shop</h2>
+        <p>3 FC evaziga futbolchi paketi sotib ol.</p>
+        <div id="packs" class="packs"></div>
+    </section>
+
+    <section id="team" class="page hidden">
+        <h2>Jamoam</h2>
+
+        <div class="team-info">
+            <h3>TEAM OVR: <span id="teamOVR">0</span></h3>
+            <p>4-3-3 FORMATION</p>
+        </div>
+
+        <div class="pitch">
+            <div class="pitch-line"></div>
+
+            <div class="pitch-row attack">
+                <div class="position-slot" data-position="LW"></div>
+                <div class="position-slot" data-position="ST"></div>
+                <div class="position-slot" data-position="RW"></div>
+            </div>
+
+            <div class="pitch-row midfield">
+                <div class="position-slot" data-position="CM"></div>
+                <div class="position-slot" data-position="CAM"></div>
+                <div class="position-slot" data-position="CM"></div>
+            </div>
+
+            <div class="pitch-row defense">
+                <div class="position-slot" data-position="LB"></div>
+                <div class="position-slot" data-position="CB"></div>
+                <div class="position-slot" data-position="CB"></div>
+                <div class="position-slot" data-position="RB"></div>
+            </div>
+
+            <div class="pitch-row goalkeeper">
+                <div class="position-slot" data-position="GK"></div>
+            </div>
+        </div>
+
+        <h2>🪑 Zaxira tarkibi</h2>
+        <div id="bench" class="players-grid"></div>
+
+        <h2>⚽ Barcha futbolchilarim</h2>
+        <div id="allPlayers" class="players-grid"></div>
+    </section>
+</main>
+
+<div id="message"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
